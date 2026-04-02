@@ -1,0 +1,18 @@
+CompileFlags:
+  Compiler: mipsel-none-elf-gcc
+  CompilationDatabase: build/debug
+  Add:
+    - -std=c17
+    - -ffreestanding
+  Remove:
+    - -isysroot
+    - -arch
+    - --sysroot
+
+Diagnostics:
+  Suppress:
+    - unused-command-line-argument
+    - unknown-argument
+
+Completion:
+  AllScopes: true

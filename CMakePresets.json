@@ -1,0 +1,154 @@
+{
+  "version": 10,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 20,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "default",
+      "generator": "Ninja"
+    },
+    {
+      "name": "debug",
+      "inherits": "default",
+      "binaryDir": "build/debug"
+    },
+    {
+      "name": "release",
+      "inherits": "default",
+      "binaryDir": "build/release"
+    },
+    {
+      "name": "arm-debug",
+      "inherits": "default",
+      "binaryDir": "build/arm-debug",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "toolchain.cmake"
+      }
+    },
+    {
+      "name": "arm-release",
+      "inherits": "default",
+      "binaryDir": "build/arm-release",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "toolchain.cmake"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "debug",
+      "configurePreset": "debug"
+    },
+    {
+      "name": "release",
+      "configurePreset": "release"
+    },
+    {
+      "name": "arm-debug",
+      "configurePreset": "arm-debug"
+    },
+    {
+      "name": "arm-release",
+      "configurePreset": "arm-release"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "debug",
+      "configurePreset": "debug",
+      "output": { "outputOnFailure": true },
+      "execution": { "noTestsAction": "error", "stopOnFailure": false }
+    },
+    {
+      "name": "release",
+      "configurePreset": "release",
+      "output": { "outputOnFailure": true },
+      "execution": { "noTestsAction": "error", "stopOnFailure": true }
+    },
+    {
+      "name": "arm-debug",
+      "configurePreset": "arm-debug",
+      "output": { "outputOnFailure": true },
+      "execution": { "noTestsAction": "error", "stopOnFailure": false }
+    },
+    {
+      "name": "arm-release",
+      "configurePreset": "arm-release",
+      "output": { "outputOnFailure": true },
+      "execution": { "noTestsAction": "error", "stopOnFailure": true }
+    }
+  ],
+  "workflowPresets": [
+    {
+      "name": "debug-ci",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "debug"
+        },
+        {
+          "type": "build",
+          "name": "debug"
+        },
+        {
+          "type": "test",
+          "name": "debug"
+        }
+      ]
+    },
+    {
+      "name": "release-ci",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "release"
+        },
+        {
+          "type": "build",
+          "name": "release"
+        },
+        {
+          "type": "test",
+          "name": "release"
+        }
+      ]
+    },
+    {
+      "name": "arm-debug-ci",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "arm-debug"
+        },
+        {
+          "type": "build",
+          "name": "arm-debug"
+        },
+        {
+          "type": "test",
+          "name": "arm-debug"
+        }
+      ]
+    },
+    {
+      "name": "arm-release-ci",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "arm-release"
+        },
+        {
+          "type": "build",
+          "name": "arm-release"
+        },
+        {
+          "type": "test",
+          "name": "arm-release"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+BasedOnStyle: LLVM
+Language: Cpp
+
+# Alignment
+AlignAfterOpenBracket: AlwaysBreak
+AlignConsecutiveMacros: AcrossEmptyLinesAndComments
+AlignConsecutiveAssignments: AcrossEmptyLinesAndComments
+AlignConsecutiveBitFields: AcrossEmptyLinesAndComments
+AlignConsecutiveDeclarations: true
+AlignEscapedNewlines: Left
+AlignOperands: true
+AlignTrailingComments: true
+PointerAlignment: Right
+
+# Allow one-liners for case labels
+AllowShortCaseLabelsOnASingleLine: true
+
+# Indentation
+IndentWidth: 2
+ContinuationIndentWidth: 2
+UseTab: Never
+ColumnLimit: "80"
+IndentPPDirectives: AfterHash
+
+# Always list each argument on its own line
+BinPackArguments: false
+BinPackParameters: false
+ExperimentalAutoDetectBinPacking: false
+AllowAllParametersOfDeclarationOnNextLine: false
+
+# Spaces
+SpaceAfterCStyleCast: "true"
+SpaceBeforeAssignmentOperators: "true"
+SpaceBeforeParens: ControlStatements
+SpaceBeforeRangeBasedForLoopColon: "true"
+SpaceInEmptyParentheses: "false"
+SpacesInAngles: "true"
+SpacesInCStyleCastParentheses: "false"
+
+# Breaks
+BreakBeforeBraces: Custom
+
+BraceWrapping:
+  AfterFunction: true
+  AfterControlStatement: false
+  AfterClass: true
+  AfterStruct: true
+  AfterEnum: false
+  AfterNamespace: true
+  BeforeElse: false
+  BeforeCatch: false
+  BeforeLambdaBody: true
+  IndentBraces: false
+  SplitEmptyFunction: false
+  SplitEmptyRecord: false
+
+AlwaysBreakAfterReturnType: All
+
+AllowShortIfStatementsOnASingleLine: true
+AllowShortBlocksOnASingleLine: true
+AllowShortLoopsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: true
+
+BreakBeforeBinaryOperators: NonAssignment
+BreakStringLiterals: "true"
+BreakBeforeInlineASMColon: OnlyMultiline
+
+SortIncludes: CaseSensitive
+IncludeBlocks: Regroup
+IncludeIsMainRegex: "(Test)?$"
+
+IncludeCategories:
+  - Regex: '^<[^/]+\.h>$'
+    Priority: 1
+    SortPriority: 1
+  - Regex: '^<[^/]+/.*\.h>$'
+    Priority: 2
+    SortPriority: 2
+  - Regex: '^"[^/]+\.h"$'
+    Priority: 3
+    SortPriority: 3
+  - Regex: '^".+/.*\.h"$'
+    Priority: 4
+    SortPriority: 4
+
+# Misc
+IndentCaseLabels: true
+ReflowComments: true
