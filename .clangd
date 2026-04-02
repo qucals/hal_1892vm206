@@ -1,6 +1,6 @@
 CompileFlags:
   Compiler: mipsel-none-elf-gcc
-  CompilationDatabase: build/debug
+  CompilationDatabase: build/arm-debug
   Add:
     - -std=c17
     - -ffreestanding
@@ -8,6 +8,9 @@ CompileFlags:
     - -isysroot
     - -arch
     - --sysroot
+    - -ffixed-k0
+    - -ffixed-k1
+    - -fno-delayed-branch
 
 Diagnostics:
   Suppress:

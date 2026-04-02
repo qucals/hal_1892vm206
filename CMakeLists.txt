@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(mipsel-qemu
+project(mos
   LANGUAGES CXX C ASM
+  DESCRIPTION "Minimal OS для MIPS Embedded"
 )
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)

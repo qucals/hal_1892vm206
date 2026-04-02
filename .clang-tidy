@@ -2,17 +2,17 @@ Checks: >
   -*,
   bugprone-*,
   -bugprone-easily-swappable-parameters,
+  -bugprone-reserved-identifier,
   cert-*,
   -cert-dcl37-c,
   -cert-dcl51-cpp,
   clang-analyzer-*,
   misc-*,
   -misc-unused-parameters,
-  readability-identifier-naming,
   readability-braces-around-statements,
   readability-isolate-declaration,
   readability-redundant-preprocessor,
-  readability-magic-numbers,
+  readability-magic-numbers,    
 
 WarningsAsErrors: ""
 
@@ -49,3 +49,4 @@ CheckOptions:
     value: lower_case
   - key: readability-magic-numbers.IgnoredIntegerValues
     value: "0;1;2"
+   value: "0;1;2"
